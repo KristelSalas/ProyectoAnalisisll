@@ -12,21 +12,31 @@ import java.util.Set;
 
 public class Voraz 
 {
-    public static void solucionVoraz(ArrayList<Alimento> alimentos, int minCal, int MaxPeso)
+    public static void solucionVoraz(ArrayList<Alimento> alimentos, int minCal, int maxPeso)
     {
         ArrayList<Alimento> solucion = new ArrayList<>(); //Array donde se van a guardar los alimentos que contienen la solucion
+        int calTotal = 0;
+        int pesoTotal = 0;
         while(alimentos.isEmpty() != true)// ciclo para recorrer hasta que no queden aristas
         {
-            Alimento A = mejorAlimento(alimentos);// Función que trae el mejor alimento y lo guarda en la variable
-            solucion.add(A); //Agregar el vertice a la lista de soluciones
-            System.out.println("\n"+"Alimento con mayor cantidad de calorías y menor cantidad de peso: " + A);
-            alimentos.remove(A); //Elimina el alimento encontrado anteriormente de la lista
-            System.out.println("\n"+"----------- LISTA REDUCIDA -----------");
-            for (Alimento alimento: alimentos){
-            System.out.println(alimento.toString());}
-            System.out.println("--------------------------------------");
+            if(calTotal < minCal || pesoTotal < maxPeso){
+                Alimento mejor = mejorAlimento(alimentos);// Función que trae el mejor alimento y lo guarda en la variable
+                solucion.add(mejor); //Agregar el vertice a la lista de soluciones
+                calTotal += mejor.getCalorias();
+                pesoTotal += mejor.getPeso();
+                System.out.println("\n"+"Alimento con mayor cantidad de calorías y menor cantidad de peso: " + mejor);
+                alimentos.remove(mejor); //Elimina el alimento encontrado anteriormente de la lista
+                System.out.println("\n"+"----------- LISTA REDUCIDA -----------");
+                for (Alimento alimento: alimentos){
+                System.out.println(alimento.toString());}
+                System.out.println("--------------------------------------");
+            }
+            else
+                break;
         }
-        System.out.println("\n"+"Alimentos de la solucion: " + solucion.toString()); //Imprime los vertices de la solucion  
+        System.out.println("\n"+"Alimentos de la solucion: ");
+        for (Alimento alimento: solucion){
+            System.out.println(alimento.toString());}//Imprime los vertices de la solucion  
     } 
     
     public static Alimento mejorAlimento(ArrayList<Alimento> alimentos) //Funcion para sacar el alimento con mayor cantidad de calorias y menos peso

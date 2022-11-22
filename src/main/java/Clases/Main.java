@@ -34,7 +34,7 @@ public class Main
         /** Lista de 6 alimentos **/
         System.out.println("\n" + "°°*°°*°°------------------------------- HEURISTICA VORAZ --------------------------------°°*°°*°°");
         
-        ArrayList<Alimento> alimentos1 = new ArrayList<>();
+        /**ArrayList<Alimento> alimentos1 = new ArrayList<>();
         alimentos1.add(alimento2);
         alimentos1.add(alimento4);
         alimentos1.add(alimento6);
@@ -48,14 +48,14 @@ public class Main
         }
         System.out.println("-------------------------------------");
         
-        Voraz.solucionVoraz(alimentos1, 600, 700); 
+        Voraz.solucionVoraz(alimentos1, 600, 700); **/
         
         
         
         
         
         /** Lista de 8 alimentos **/
-        /**ArrayList<Alimento> alimentos2 = new ArrayList<>();
+        ArrayList<Alimento> alimentos2 = new ArrayList<>();
         alimentos2.add(alimento1);
         alimentos2.add(alimento4);
         alimentos2.add(alimento6);
@@ -65,11 +65,13 @@ public class Main
         alimentos2.add(alimento15);
         alimentos2.add(alimento16);
         
+        System.out.println("\n"+"-------- LISTA DE 8 ALIMENTOS --------");
         for (Alimento alimento: alimentos2){
             System.out.println(alimento.toString());
         }
+        System.out.println("-------------------------------------");
         
-        Voraz.solucionVoraz(alimentos2, 600, 700); **/
+        Voraz.solucionVoraz(alimentos2, 900, 400); 
         
         
         
@@ -89,9 +91,11 @@ public class Main
         alimentos3.add(alimento13);
         alimentos3.add(alimento14);
         
+        System.out.println("\n"+"-------- LISTA DE 12 ALIMENTOS --------");
         for (Alimento alimento: alimentos3){
             System.out.println(alimento.toString());
         }
+        System.out.println("-------------------------------------");
         
         Voraz.solucionVoraz(alimentos3, 600, 700);**/
         
@@ -118,9 +122,11 @@ public class Main
         alimentos4.add(alimento15);
         alimentos4.add(alimento16);
         
+        System.out.println("\n"+"-------- LISTA DE 16 ALIMENTOS --------");
         for (Alimento alimento: alimentos4){
             System.out.println(alimento.toString());
         }
+        System.out.println("-------------------------------------");
         
         Voraz.solucionVoraz(alimentos4, 600, 700); **/
     }
